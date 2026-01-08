@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class _3_WordLengths2D {
+
+    public static int getLength(String text) {
+        int count = 0;
+        try {
+            while (true) {
+                text.charAt(count);
+                count++;
+            }
+        } catch (IndexOutOfBoundsException e) {
+            return count;
+        }
+    }
+
+    public static String[] customSplit(String text) {
+        // Simplified split logic for brevity, assuming single spaces for this problem context
+        int count = 1; 
+        for(int i=0; i<getLength(text); i++) {
+            if(text.charAt(i) == ' ') count++;
+        }
+        String[] words = new String[count];
+        String temp = "";
+        int idx = 0;
+        for(int i=0; i<getLength(text); i++) {
+            if(text.charAt(i) != ' ') {
+                temp += text.charAt(i);
+            } else {
+                words[idx++] = temp;
+                temp = "";
+            }
+        }
+        words[idx] = temp;
+        return words;
+    }
+
+    public static String[][] getWordLengths(String[] words) {
+        String[][] result = new String[words.length][2];
+        for (int i = 0; i < words.length; i++) {
+            result[i][0] = words[i];
+            result[i][1] = String.valueOf(getLength(words[i]));
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        
+        String[] words = customSplit(text);
+        String[][] wordData = getWordLengths(words);
+
+        System.out.println("Word\tLength");
+        for (int i = 0; i < wordData.length; i++) {
+            System.out.println(wordData[i][0] + "\t" + Integer.parseInt(wordData[i][1]));
+        }
+    }
+}import java.util.Scanner;
+
+public class _3_WordLengths2D {
+
+    public static int getLength(String text) {
+        int count = 0;
+        try {
+            while (true) {
+                text.charAt(count);
+                count++;
+            }
+        } catch (IndexOutOfBoundsException e) {
+            return count;
+        }
+    }
+
+    public static String[] customSplit(String text) {
+        // Simplified split logic for brevity, assuming single spaces for this problem context
+        int count = 1; 
+        for(int i=0; i<getLength(text); i++) {
+            if(text.charAt(i) == ' ') count++;
+        }
+        String[] words = new String[count];
+        String temp = "";
+        int idx = 0;
+        for(int i=0; i<getLength(text); i++) {
+            if(text.charAt(i) != ' ') {
+                temp += text.charAt(i);
+            } else {
+                words[idx++] = temp;
+                temp = "";
+            }
+        }
+        words[idx] = temp;
+        return words;
+    }
+
+    public static String[][] getWordLengths(String[] words) {
+        String[][] result = new String[words.length][2];
+        for (int i = 0; i < words.length; i++) {
+            result[i][0] = words[i];
+            result[i][1] = String.valueOf(getLength(words[i]));
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+        
+        String[] words = customSplit(text);
+        String[][] wordData = getWordLengths(words);
+
+        System.out.println("Word\tLength");
+        for (int i = 0; i < wordData.length; i++) {
+            System.out.println(wordData[i][0] + "\t" + Integer.parseInt(wordData[i][1]));
+        }
+    }
+}

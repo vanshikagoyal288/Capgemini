@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class _5_FrequencyUnique {
+
+    public static char[] getUniqueChars(String text) {
+        char[] temp = new char[text.length()];
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            boolean seen = false;
+            for (int j = 0; j < count; j++) {
+                if (temp[j] == text.charAt(i)) {
+                    seen = true;
+                    break;
+                }
+            }
+            if (!seen) {
+                temp[count++] = text.charAt(i);
+            }
+        }
+        char[] result = new char[count];
+        System.arraycopy(temp, 0, result, 0, count);
+        return result;
+    }
+
+    public static String[][] getFrequencies(String text) {
+        char[] unique = getUniqueChars(text);
+        int[] freqArray = new int[256];
+        for (int i = 0; i < text.length(); i++) {
+            freqArray[text.charAt(i)]++;
+        }
+
+        String[][] result = new String[unique.length][2];
+        for (int i = 0; i < unique.length; i++) {
+            result[i][0] = String.valueOf(unique[i]);
+            result[i][1] = String.valueOf(freqArray[unique[i]]);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.next();
+        String[][] res = getFrequencies(text);
+
+        for (int i = 0; i < res.length; i++) {
+            System.out.println(res[i][0] + ": " + res[i][1]);
+        }
+    }
+}

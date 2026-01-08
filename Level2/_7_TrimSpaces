@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class _7_TrimSpaces {
+
+    public static int[] findTrimIndices(String text) {
+        int start = 0;
+        int end = text.length() - 1;
+
+        while (start <= end && text.charAt(start) == ' ') {
+            start++;
+        }
+        while (end >= start && text.charAt(end) == ' ') {
+            end--;
+        }
+        return new int[]{start, end + 1};
+    }
+
+    public static String getSubstring(String text, int start, int end) {
+        String res = "";
+        for (int i = start; i < end; i++) {
+            res += text.charAt(i);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.nextLine();
+
+        int[] indices = findTrimIndices(text);
+        String customTrim = getSubstring(text, indices[0], indices[1]);
+        String builtInTrim = text.trim();
+
+        System.out.println("Custom Trim: '" + customTrim + "'");
+        System.out.println("Built-in Trim: '" + builtInTrim + "'");
+        
+        if (customTrim.equals(builtInTrim)) {
+             System.out.println("Results match");
+        } else {
+             System.out.println("Results do not match");
+        }
+    }
+}
