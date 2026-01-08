@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class _5_StringIndexOutOfBoundsDemo {
+
+    public static void generateException(String text) {
+        System.out.println(text.charAt(text.length() + 1));
+    }
+
+    public static void handleException(String text) {
+        try {
+            System.out.println(text.charAt(text.length() + 1));
+        } catch (StringIndexOutOfBoundsException e) {
+            System.out.println("StringIndexOutOfBoundsException caught");
+        } catch (RuntimeException e) {
+            System.out.println("RuntimeException caught");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String text = sc.next();
+        handleException(text);
+    }
+}
