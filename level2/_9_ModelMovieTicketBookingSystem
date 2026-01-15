@@ -1,0 +1,55 @@
+class MovieTicket {
+    String movieName;
+    int seatNumber;
+    double price;
+
+    MovieTicket(String movieName, double price) {
+        this.movieName = movieName;
+        this.price = price;
+    }
+
+    void bookTicket(int seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    void displayTicketDetails() {
+        System.out.println("Movie: " + movieName);
+        System.out.println("Seat: " + seatNumber);
+        System.out.println("Price: " + price);
+    }
+}
+
+public class _9_ModelMovieTicketBookingSystem {
+    public static void main(String[] args) {
+        MovieTicket t = new MovieTicket("Inception", 12.50);
+        t.bookTicket(5);
+        t.displayTicketDetails();
+    }
+}class MovieTicket {
+    String movieName;
+    int seatNumber;
+    double price;
+
+    MovieTicket(String movieName, double price) {
+        this.movieName = movieName;
+        this.price = price;
+    }
+
+    void bookTicket(int seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    void displayTicketDetails() {
+        System.out.println("Movie: " + movieName);
+        System.out.println("Seat: " + seatNumber);
+        System.out.println("Price: " + price);
+    }
+}
+
+public class _9_ModelMovieTicketBookingSystem {
+    public static void main(String[] args) {
+        MovieTicket t = new MovieTicket("Inception", 12.50);
+        t.bookTicket(5);
+        t.displayTicketDetails();
+    }
+}

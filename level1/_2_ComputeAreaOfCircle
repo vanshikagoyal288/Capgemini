@@ -1,0 +1,19 @@
+class Circle {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    void displayAreaAndCircumference() {
+        System.out.println("Area: " + (Math.PI * radius * radius));
+        System.out.println("Circumference: " + (2 * Math.PI * radius));
+    }
+}
+
+public class _2_ComputeAreaOfCircle {
+    public static void main(String[] args) {
+        Circle c = new Circle(5.0);
+        c.displayAreaAndCircumference();
+    }
+}

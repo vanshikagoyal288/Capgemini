@@ -1,0 +1,34 @@
+class BankAccount {
+    String accountHolder;
+    String accountNumber;
+    double balance;
+
+    BankAccount(String accountHolder, String accountNumber, double balance) {
+        this.accountHolder = accountHolder;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        }
+    }
+
+    void displayBalance() {
+        System.out.println("Current Balance: " + balance);
+    }
+}
+
+public class _7_SimulateATM {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount("John", "12345", 1000);
+        acc.deposit(500);
+        acc.withdraw(200);
+        acc.displayBalance();
+    }
+}
