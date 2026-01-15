@@ -1,0 +1,24 @@
+class Item {
+    int itemCode;
+    String itemName;
+    double price;
+
+    Item(int itemCode, String itemName, double price) {
+        this.itemCode = itemCode;
+        this.itemName = itemName;
+        this.price = price;
+    }
+
+    void displayDetailsAndTotalCost(int quantity) {
+        System.out.println("Item: " + itemName + " (Code: " + itemCode + ")");
+        System.out.println("Price per unit: " + price);
+        System.out.println("Total Cost for " + quantity + ": " + (price * quantity));
+    }
+}
+
+public class _4_TrackInventoryOfItems {
+    public static void main(String[] args) {
+        Item item = new Item(101, "Pen", 1.50);
+        item.displayDetailsAndTotalCost(10);
+    }
+}
