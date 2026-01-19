@@ -1,0 +1,21 @@
+
+class Order {
+    void process() {
+        System.out.println("Order processed");
+    }
+}
+
+class OnlineOrder extends Order {
+    @Override
+    void process() {
+        super.process();
+        System.out.println("Email sent");
+    }
+}
+
+public class _16_TestInteractions {
+    public static void main(String[] args) {
+        OnlineOrder order = new OnlineOrder();
+        order.process();
+    }
+}

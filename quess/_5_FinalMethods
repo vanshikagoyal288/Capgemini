@@ -1,0 +1,20 @@
+
+class SecuritySystem {
+    final void authenticate() { 
+        System.out.println("Authentication protocol executed");
+    }
+}
+
+class DoorLock extends SecuritySystem {
+    void open() {
+        System.out.println("Door opened");
+    }
+}
+
+public class _5_FinalMethods {
+    public static void main(String[] args) {
+        DoorLock lock = new DoorLock();
+        lock.authenticate();
+        lock.open();
+    }
+}

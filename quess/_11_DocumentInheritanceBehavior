@@ -1,0 +1,22 @@
+
+class BaseService {
+    
+    void setup() {
+        System.out.println("Base setup complete");
+    }
+}
+
+class CustomService extends BaseService {
+    @Override
+    void setup() {
+        super.setup();
+        System.out.println("Custom setup complete");
+    }
+}
+
+public class _11_DocumentInheritanceBehavior {
+    public static void main(String[] args) {
+        CustomService cs = new CustomService();
+        cs.setup();
+    }
+}

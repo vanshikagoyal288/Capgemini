@@ -1,0 +1,22 @@
+
+class PrinterDelegate {
+    void printDocs() {
+        System.out.println("Printing documents...");
+    }
+}
+
+class OfficeManager {
+    private PrinterDelegate printer = new PrinterDelegate(); 
+
+    void performTask() {
+        System.out.println("Manager coordinating...");
+        printer.printDocs(); 
+    }
+}
+
+public class _18_UseDelegation {
+    public static void main(String[] args) {
+        OfficeManager manager = new OfficeManager();
+        manager.performTask();
+    }
+}
