@@ -1,0 +1,25 @@
+
+class Printer {
+    void print(String s) {
+        System.out.println("Printing string: " + s);
+    }
+}
+
+class AdvancedPrinter extends Printer {
+    @Override
+    void print(String s) {
+        System.out.println("Advanced printing: " + s);
+    }
+
+    void printNumber(int i) {
+        System.out.println("Printing int: " + i);
+    }
+}
+
+public class _8_AvoidOverloadingWithOverriding {
+    public static void main(String[] args) {
+        AdvancedPrinter p = new AdvancedPrinter();
+        p.print("Hello");
+        p.printNumber(123);
+    }
+}
