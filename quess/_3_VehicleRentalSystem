@@ -1,0 +1,41 @@
+abstract class Vehicle {
+    private String vehicleNumber;
+    protected double rentalRate;
+
+    Vehicle(String vehicleNumber, double rentalRate) {
+        this.vehicleNumber = vehicleNumber;
+        this.rentalRate = rentalRate;
+    }
+
+    abstract double calculateRentalCost(int days);
+}
+
+interface Insurable {
+    double calculateInsurance();
+    String getInsuranceDetails();
+}
+
+class Car extends Vehicle implements Insurable {
+    Car(String num, double rate) {
+        super(num, rate);
+    }
+
+    double calculateRentalCost(int days) {
+        return rentalRate * days;
+    }
+
+    public double calculateInsurance() {
+        return 500;
+    }
+
+    public String getInsuranceDetails() {
+        return "Car Insurance";
+    }
+}
+
+public class _3_VehicleRentalSystem {
+    public static void main(String[] args) {
+        Vehicle v = new Car("MH12", 2000);
+        System.out.println(v.calculateRentalCost(3));
+    }
+}

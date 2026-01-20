@@ -1,0 +1,39 @@
+abstract class VehicleRide {
+    private int vehicleId;
+    private String driverName;
+    protected double ratePerKm;
+
+    VehicleRide(int id, String d, double r) {
+        vehicleId = id;
+        driverName = d;
+        ratePerKm = r;
+    }
+
+    abstract double calculateFare(double distance);
+
+    void getVehicleDetails() {
+        System.out.println(driverName);
+    }
+}
+
+interface GPS {
+    String getCurrentLocation();
+    void updateLocation(String loc);
+}
+
+class CarRide extends VehicleRide {
+    CarRide(int i, String d, double r) {
+        super(i, d, r);
+    }
+
+    double calculateFare(double distance) {
+        return distance * ratePerKm;
+    }
+}
+
+public class _8_RideHailingApplication {
+    public static void main(String[] args) {
+        VehicleRide v = new CarRide(1, "Driver", 15);
+        System.out.println(v.calculateFare(10));
+    }
+}
