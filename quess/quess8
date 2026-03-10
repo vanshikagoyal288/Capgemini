@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main
+{
+    public static ArrayList ans(int a[],int n){
+        Arrays.sort(a);
+        ArrayList <Integer> ar=new ArrayList<>();
+        for(int i=0;i<a.length-1;i++){
+            if(a[i]!=a[i+1]){
+                ar.add(a[i]);
+            }
+            
+        }
+        ar.add(a[a.length-1]);
+        return ar;
+    }
+	public static void main(String[] args) {
+	    int a[]={11,11,11,13,13,20};
+	    int n=6;
+		System.out.println(ans(a,n));
+	}
+}

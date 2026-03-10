@@ -1,0 +1,14 @@
+public class Main
+{
+    public static boolean anss(String a,String b){
+        if(a.contains(b)){
+            return true;
+        }
+        return false;
+    }
+	public static void main(String[] args) {
+	    String a="abac";
+	    String b="baaaa";
+		System.out.println(anss(a,b));
+	}
+}

@@ -1,0 +1,13 @@
+import java.util.*;
+public class Main
+{
+    public static int anss(int arr[],int n){
+        Arrays.sort(arr);
+        return arr[n-1];
+    }
+	public static void main(String[] args) {
+		int arr[]={1,2,3,4,1,2,3};
+		int n=7;
+		System.out.print(anss(arr,n));
+	}
+}

@@ -1,0 +1,17 @@
+public class Main
+{
+    public static int anss(int a){
+        int ld=0;
+        int rev=0;
+        while(a!=0){
+            ld=a%10;
+            rev=rev*10+ld;
+            ld=ld/10;
+        }
+        return rev;
+    }
+	public static void main(String[] args) {
+	    int a=1230;
+		System.out.println(anss(a));
+	}
+}

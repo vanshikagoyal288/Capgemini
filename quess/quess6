@@ -1,0 +1,28 @@
+public class Main
+{
+    public static int ans(String a){
+        String [] b=a.split(" ");
+        int flag=1;
+        int count=0;
+        for(int i=0;i<b.length;i++)
+        {
+            flag=1;
+            char[] c=b[i].toCharArray();
+            for(int j=0;j<c.length/2;j++){
+                if(c[j]!=c[c.length-j-1]){
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==1){
+                count++;
+            }
+        }
+        return count;
+    }
+	public static void main(String[] args) {
+	    String a="this is level 71 level";
+	    
+		System.out.println(ans(a));
+	}
+}

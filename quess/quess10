@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main
+{
+    public static ArrayList anss(int arr[]){
+        ArrayList <Integer> ary=new ArrayList<>();
+        int count=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==0){
+                count++;
+            }
+            if(arr[i]!=0){
+                ary.add(arr[i]);
+            }
+        }
+        for(int i=0;i<count;i++){
+            ary.add(0);
+        }
+        return ary;
+    }
+	public static void main(String[] args) {
+	    int arr[]={5,0,7,1,2,0,0,6};
+		System.out.println(anss(arr));
+	}
+}

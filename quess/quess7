@@ -1,0 +1,22 @@
+public class Main
+{
+    public static String anss(String a)
+    {
+        String word = "";
+         for(int i = 0; i < a.length(); i++)
+        {
+            char ch = a.charAt(i);
+            if(word.indexOf(ch) == -1)
+            {
+                word = word + ch;
+            }
+        }
+        return word;
+    }
+
+    public static void main(String[] args)
+    {
+        String a = "CsharpstarZ";
+        System.out.println(anss(a));
+    }
+}
